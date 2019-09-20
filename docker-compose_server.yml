@@ -9,4 +9,4 @@ services:
       - ./v2ray:/etc/v2ray
     ports:
       - "16823:16823"
-    command: ["v2ray","-config=/etc/v2ray/config_sever.json"]
+    command: ["v2ray","-config=/etc/v2ray/config_server.json"]
