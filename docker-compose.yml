@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  v2ray:
+    image: v2ray/official:latest
+    container_name: v2ray_${VMODE}
+    restart: always
+    volumes:
+      - ./v2ray:/etc/v2ray
+    ports:
+      - "160:160"
+      - "160:160/udp"
+      - "201-220:201-220"
+      - "201-220:201-220/udp"
+      - "16823:16823"
+    environment:
+      - VMODE
+    command: ["v2ray","-config=/etc/v2ray/config_${VMODE}.json"]
