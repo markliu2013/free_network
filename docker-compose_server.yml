@@ -15,6 +15,10 @@ services:
       image: hwdsl2/ipsec-vpn-server:latest
       container_name: vpn_server
       restart: always
+      privileged: true
+      ports:
+        - "500:500"
+        - "4500:4500"
       environment:
         VPN_IPSEC_PSK: liu1234
         VPN_USER: mark
