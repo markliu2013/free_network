@@ -10,6 +10,8 @@ services:
     ports:
       - "16823:16823"
     command: ["v2ray","-config=/etc/v2ray/config_server.json"]
+    environment:
+      - "TZ=Asia/Shanghai" 
 
 #  vpn_server:
 #      image: hwdsl2/ipsec-vpn-server:latest
