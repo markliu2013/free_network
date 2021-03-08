@@ -18,8 +18,8 @@
       "settings": {
         "vnext": [
           {
-            "address": "zfwhub.com",
-            "port": 16826,
+            "address": "frp.freefrp.net",
+            "port": 48539,
             "users": [
               {
                 "id": "b0f79631-cbf4-4da0-af3f-5d618a2a2f33",
