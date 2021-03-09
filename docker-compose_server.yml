@@ -4,7 +4,7 @@ services:
   v2ray:
     image: v2ray/official:latest
     container_name: v2ray_server
-    restart: always
+    #restart: always
     volumes:
       - ./v2ray:/etc/v2ray
     ports:
