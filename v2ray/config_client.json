@@ -1,7 +1,7 @@
 {
   "inbounds": [
     {
-      "port": 1080,
+      "port": 1087,
       "protocol": "socks",
       "sniffing": {
         "enabled": true,
@@ -18,8 +18,8 @@
       "settings": {
         "vnext": [
           {
-            "address": "frp.freefrp.net",
-            "port": 48539,
+            "address": "fq.jiukuaitech.com",
+            "port": 16823,
             "users": [
               {
                 "id": "b0f79631-cbf4-4da0-af3f-5d618a2a2f33",
