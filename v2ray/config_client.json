@@ -1,0 +1,34 @@
+{
+  "inbounds": [
+    {
+      "port": 1087,
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "auth": "noauth"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "fq.jiukuaitech.com",
+            "port": 16823,
+            "users": [
+              {
+                "id": "b0f79631-cbf4-4da0-af3f-5d618a2a2f33",
+                "alterId": 64
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

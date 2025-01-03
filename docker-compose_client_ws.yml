@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  v2ray:
+    image: v2ray/official:latest
+    container_name: v2ray_client
+    #restart: always
+    volumes:
+      - ./v2ray:/etc/v2ray
+    ports:
+      - "1080:1080"
+    command: ["v2ray","-config=/etc/v2ray/config_client_ws.json"]

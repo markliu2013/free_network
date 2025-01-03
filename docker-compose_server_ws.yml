@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  v2ray:
+    image: v2ray/official:latest
+    container_name: v2ray_server
+    #restart: always
+    volumes:
+      - ./v2ray:/etc/v2ray
+    ports:
+      - "38462:38462"
+    command: ["v2ray","-config=/etc/v2ray/config_server_ws.json"]
+    environment:
+      - "TZ=Asia/Shanghai"
+
+#  vpn_server:
+#      image: hwdsl2/ipsec-vpn-server:latest
+#      container_name: vpn_server
+#      restart: always
+#      privileged: true
+#      ports:
+#        - "500:500"
+#        - "4500:4500"
+#      environment:
+#        VPN_IPSEC_PSK: liu1234
+#        VPN_USER: mark
+#        VPN_PASSWORD: liu1234
+#        VPN_ADDL_USERS: mark1 mark2 mark3
+#        VPN_ADDL_PASSWORDS: liu1234 liu1234 liu1234
