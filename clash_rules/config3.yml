@@ -28,7 +28,7 @@ proxy-providers:
     proxy: 直连
 # 节点信息
 proxies:
-  - {name: DIRECT, type: direct, udp: true}
+  - {name: 直连, type: direct, udp: true}
 
 # 全局配置
 port: 7890
@@ -94,22 +94,22 @@ dns:
 # 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [♻️ 所有-自动, ♻️ 香港-自动, 🔯️ 所有-故转, 🌐 所有-选择, DIRECT]}
-  - {name: 🤖 ChatGPT, type: select, proxies: [♻️ 所有-自动, ♻️ 香港-自动, 🔯️ 所有-故转, 🌐 所有-选择, DIRECT]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 所有-自动, ♻️ 香港-自动, 🔯️ 所有-故转, 🌐 所有-选择, DIRECT]}
+  - {name: 🚀 默认代理, type: select, proxies: [♻️ 所有-自动, ♻️ 香港-自动, 🔯️ 所有-故转, 🌐 所有-选择, 直连]}
+  - {name: 🤖 ChatGPT, type: select, proxies: [♻️ 所有-自动, ♻️ 香港-自动, 🔯️ 所有-故转, 🌐 所有-选择, 直连]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 所有-自动, ♻️ 香港-自动, 🔯️ 所有-故转, 🌐 所有-选择, 直连]}
 
-  - {name: ♻️ 所有-自动, type: url-test, include-all: true, tolerance: 60, interval: 150, filter: "^((?!(DIRECT)).)*$"}
+  - {name: ♻️ 所有-自动, type: url-test, include-all: true, tolerance: 60, interval: 150, filter: "^((?!(直连)).)*$"}
   - {name: ♻️ 香港-自动, type: url-test, include-all: true, tolerance: 60, interval: 150, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: 🔯️ 所有-故转, type: url-test, include-all: true, tolerance: 60, interval: 150, filter: "^((?!(DIRECT)).)*$"}
+  - {name: 🔯️ 所有-故转, type: url-test, include-all: true, tolerance: 60, interval: 150, filter: "^((?!(直连)).)*$"}
   - {name: 🌐 所有-选择, type: select, include-all: true}
 
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
-  - RULE-SET,private_ip,DIRECT
-  - RULE-SET,private_domain,DIRECT
-  - RULE-SET,cn_domain,DIRECT
-  - RULE-SET,cn_ip,DIRECT
+  - RULE-SET,private_ip,直连
+  - RULE-SET,private_domain,直连
+  - RULE-SET,cn_domain,直连
+  - RULE-SET,cn_ip,直连
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,proxylite,🚀 默认代理
   - RULE-SET,geolocation-!cn,🚀 默认代理
